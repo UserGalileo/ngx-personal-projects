@@ -23,7 +23,7 @@ export interface NotificationConfig {
  */
 export interface Disposable<T> {
   dispose: EventEmitter<T>;
-  duration?: number;
+  config?: NotificationConfig;
 }
 /**
  * Possible notification positions

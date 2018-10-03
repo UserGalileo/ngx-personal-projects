@@ -39,7 +39,7 @@ import { NotificationModule } from 'ngx-custom-notifications';
 ##### Create a custom component which implements Disposable<T>, where T is the type of the returned value when the notification is dismissed!
 
 This interface forces you to have an EventEmitter property called 'dispose' which you can call from inside the component in order to dispose the notification.
-Optionally, you can have a property called 'duration' which will receive the duration of the notification, if you choose to use it. It may be useful if you want to display a progress bar (or a timer) inside the component.
+Optionally, you can have a property called 'config' which will receive the configuration for this notif. It may be useful if you want to get the duration, or the initial data.
 
 ```javascript
 @Component({...})
@@ -47,7 +47,7 @@ export class MaterialNotification implements Disposable<string> {
   // Mandatory:
   dispose = new EventEmitter<string>();
   // Optional:
-  @Input() duration: number;
+  @Input() config: NotificationConfig;
 }
 ```
 

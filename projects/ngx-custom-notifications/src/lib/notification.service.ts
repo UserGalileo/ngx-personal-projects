@@ -1,23 +1,18 @@
 import {
-  Injectable,
-  ComponentFactoryResolver,
-  Renderer2,
-  RendererFactory2,
-  Inject,
-  Injector,
-  ComponentRef,
   ApplicationRef,
-  EmbeddedViewRef
+  ComponentFactoryResolver,
+  ComponentRef,
+  EmbeddedViewRef,
+  Inject,
+  Injectable,
+  Injector,
+  Renderer2,
+  RendererFactory2
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { timer } from 'rxjs';
 import { take } from 'rxjs/operators';
-import {
-  NotificationRef,
-  NotificationConfig,
-  Disposable,
-  NotificationPosition
-} from './notification.models';
+import { Disposable, NotificationConfig, NotificationPosition, NotificationRef } from './notification.models';
 
 /** @dynamic */
 @Injectable({
@@ -59,9 +54,9 @@ export class NotificationService {
         componentRef.instance[input] = config.data[input];
       }
     }
+    componentRef.instance.config = config;
     // If a duration is set, dispose the notif. after that time (ms)
     if (config.duration) {
-      componentRef.instance.duration = config.duration;
       timer(config.duration).subscribe(() => this.dispose(componentRef));
     }
     const onDispose = componentRef.instance.dispose.pipe(take(1));
