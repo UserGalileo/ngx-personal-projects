@@ -16,6 +16,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-custom-notifications": [
+        "dist/ngx-custom-notifications"
+      ],
+      "ngx-custom-notifications/*": [
+        "dist/ngx-custom-notifications/*"
+      ]
+    }
   }
 }
