@@ -1,4 +1,4 @@
-# Angular Custom Notifications
+# Angular Custom Notifications 🚀
 
 This library lets you display custom notifications (like Google Material toasts) in your app, using your own components instead of pre-built popups.
 It does a simple thing: it takes your components, it displays them on the page and it dismisses them (optionally) after the specified time.
